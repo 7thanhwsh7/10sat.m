@@ -440,6 +440,7 @@
       <div class="brand-logo">G.EDU</div>
       <div class="brand-sub">G.EDU Language Center</div>
       <h2>SAT Math Practice</h2>
+      <div id="wTestNo" style="margin-top:8px;font-size:15px;font-weight:700;color:#0f4f94;letter-spacing:.5px;"></div>
       <div class="wRule"></div>
       <p class="wLead">Enter your name and class to begin.</p>
       <label for="nameInput">Full name</label>
@@ -652,6 +653,7 @@
 const TEST_NAME = "Test 10 M";   // đổi cho mỗi đề — phải trùng tên trong tab KEY, kết thúc bằng "M"
 const TEST_SECTION = "M";
 const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyJcjvbCi9xqa0NR-TGyJvpjvqJkcGHKA-x_uw6kazLVng3jKZgsqJg55ae7pPaYmWO_w/exec";
+document.addEventListener("DOMContentLoaded",()=>{const el=document.getElementById("wTestNo");if(el)el.textContent=TEST_NAME.replace(/\s*M$/,"");});
 const TIME_LIMIT_MINUTES = 35;   // thời gian cho MỖI module
 
 /* Sample question data.
@@ -691,296 +693,296 @@ const SVG_Q72 = `<svg viewBox="0 0 290 200" width="330" style="max-width:100%;he
 
 const QUESTIONS = [
   /* ===================== MODULE 1 ===================== */
-  /* Q1 ← gốc 69 */
+  /* Q1 ← gốc 69 [trước: Q1] */
   { id: 1, module: 1, domain: "Algebra", type: "mcq",
     questionText: `The function <i>h</i> is defined by <i>h</i>(<i>x</i>) = ${F('<i>x</i>','6')}. What is the value of <i>h</i>(<i>x</i>) when <i>x</i> = 48?`,
     image: null,
     options: [`6`, `8`, `42`, `54`],
     correctKey: "B" },
 
-  /* Q2 ← gốc 63 */
+  /* Q2 ← gốc 172 [trước: Q9] */
   { id: 2, module: 1, domain: "Algebra", type: "mcq",
-    questionText: `For the linear function <i>f</i>, <i>f</i>(4) = 17 and <i>f</i>(8) = 1. Which equation defines <i>f</i>?`,
-    image: null,
-    options: [`<i>f</i>(<i>x</i>) = −${F('1','4')}<i>x</i> + 18`, `<i>f</i>(<i>x</i>) = ${F('1','4')}<i>x</i> − 1`, `<i>f</i>(<i>x</i>) = −4<i>x</i> + 21`, `<i>f</i>(<i>x</i>) = −4<i>x</i> + 33`],
-    correctKey: "D" },
-
-  /* Q3 ← gốc 4 (hình vẽ lại bằng SVG) */
-  { id: 3, module: 1, domain: "Problem-Solving and Data Analysis", type: "mcq",
-    questionText: SVG_Q4 + `The scatterplot shows the relationship between two variables, <i>x</i> and <i>y</i>. A line of best fit is also shown. Which of the following equations best represents the line of best fit shown?`,
-    image: null,
-    options: [`<i>y</i> = 13.3 + 0.8<i>x</i>`, `<i>y</i> = 13.3 − 0.8<i>x</i>`, `<i>y</i> = −13.3 + 0.8<i>x</i>`, `<i>y</i> = −13.3 − 0.8<i>x</i>`],
-    correctKey: "B" },
-
-  /* Q4 ← gốc 31 */
-  { id: 4, module: 1, domain: "Algebra", type: "gridin",
-    questionText: `In the <i>xy</i>-plane, line <i>k</i> has a slope of ${F('6','13')}, an <i>x</i>-intercept of (−6, 0), and a <i>y</i>-intercept of (0, <i>p</i>). What is the value of <i>p</i>?`,
-    image: null, correctKey: ["36/13", "2.769"] },
-
-  /* Q5 ← gốc 191 */
-  { id: 5, module: 1, domain: "Advanced Math", type: "mcq",
-    questionText: `The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> − 2)(<i>x</i> − 8)(<i>x</i> + 3). In the <i>xy</i>-plane, the graph of <i>y</i> = <i>h</i>(<i>x</i>) is the result of translating the graph of <i>y</i> = <i>f</i>(<i>x</i>) up 6 units. What is the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>h</i>(<i>x</i>)?`,
-    image: null,
-    options: [`54`, `48`, `6`, `0`],
-    correctKey: "A" },
-
-  /* Q6 ← gốc 86 (hình vẽ lại bằng SVG) */
-  { id: 6, module: 1, domain: "Advanced Math", type: "mcq",
-    questionText: SVG_Q86 + `The graph of a system of a linear equation and a quadratic equation is shown. What is the solution (<i>x</i>, <i>y</i>) to this system?`,
-    image: null,
-    options: [`(6, 7)`, `(7, 6)`, `(−6, 7)`, `(6, −7)`],
-    correctKey: "A" },
-
-  /* Q7 ← gốc 174 */
-  { id: 7, module: 1, domain: "Problem-Solving and Data Analysis", type: "mcq",
-    questionText: `The ratio <i>x</i> to <i>y</i> is equivalent to the ratio 5 to 6. If <i>x</i> = 7<i>t</i>, what is the value of <i>y</i> in terms of <i>t</i>?`,
-    image: null,
-    options: [`${F('5','42')}<i>t</i>`, `${F('6','35')}<i>t</i>`, `${F('35','6')}<i>t</i>`, `${F('42','5')}<i>t</i>`],
-    correctKey: "D" },
-
-  /* Q8 ← gốc 68 */
-  { id: 8, module: 1, domain: "Advanced Math", type: "mcq",
-    questionText: EQ(`4<i>x</i><sup>2</sup> − <i>px</i> + <i>w</i> = −83`) + `In the given equation, <i>p</i> and <i>w</i> are integer constants. The equation has exactly one real solution. Which is <b>NOT</b> a possible value of <i>w</i>?`,
-    image: null,
-    options: [`−19`, `17`, `36`, `317`],
-    correctKey: "C" },
-
-  /* Q9 ← gốc 172 */
-  { id: 9, module: 1, domain: "Algebra", type: "mcq",
     questionText: `What value of <i>n</i> is the solution to the equation 11<i>n</i> − 8 = 5<i>n</i> + 16?`,
     image: null,
     options: [`4`, `6`, `11`, `16`],
     correctKey: "A" },
 
-  /* Q10 ← gốc 96 */
-  { id: 10, module: 1, domain: "Advanced Math", type: "mcq",
-    questionText: `The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i><sup><i>x</i></sup> − <i>b</i>, where <i>a</i> and <i>b</i> are constants. In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) passes through the points (<i>c</i>, 11) and (2<i>c</i>, 221), where <i>c</i> is a constant. Which of the following could be the value of <i>b</i>?`,
-    image: null,
-    options: [`4`, `25`, `210`, `232`],
-    correctKey: "A" },
-
-  /* Q11 ← gốc 203 */
-  { id: 11, module: 1, domain: "Algebra", type: "mcq",
+  /* Q3 ← gốc 203 [trước: Q11] */
+  { id: 3, module: 1, domain: "Algebra", type: "mcq",
     questionText: `A cable company charges new customers a onetime installation fee and a monthly service fee for cable service. The equation <i>y</i> = 50<i>x</i> + 120 gives the total amount <i>y</i>, in dollars, the cable company charges for <i>x</i> months of cable service. What is the amount, in dollars, of the onetime installation fee the cable company charges new customers?`,
     image: null,
     options: [`170`, `120`, `70`, `0`],
     correctKey: "B" },
 
-  /* Q12 ← gốc 121 */
-  { id: 12, module: 1, domain: "Algebra", type: "mcq",
-    questionText: `If 3<i>x</i> − 9 − 4 = 8<i>x</i> − 9 + 4, what is the value of <i>x</i>?`,
-    image: null,
-    options: [`−${F('8','5')}`, `−${F('5','8')}`, F('3','8'), F('8','11')],
-    correctKey: "A" },
-
-  /* Q13 ← gốc 115 */
-  { id: 13, module: 1, domain: "Algebra", type: "mcq",
+  /* Q4 ← gốc 115 [trước: Q13] */
+  { id: 4, module: 1, domain: "Algebra", type: "mcq",
     questionText: `The number <i>b</i> is 15 more than half of the number <i>a</i>. Which equation represents the relationship between <i>a</i> and <i>b</i>?`,
     image: null,
     options: [`<i>b</i> = 30<i>a</i>`, `<i>b</i> = 15<i>a</i> + 2`, `<i>b</i> = ${F('<i>a</i>','15')} + 2`, `<i>b</i> = ${F('<i>a</i>','2')} + 15`],
     correctKey: "D" },
 
-  /* Q14 ← gốc 15 */
-  { id: 14, module: 1, domain: "Problem-Solving and Data Analysis", type: "mcq",
-    questionText: `A research manager selected 2 random samples of ovens of a certain type to estimate the average amount of time this type of oven takes to preheat to 350 degrees Fahrenheit °F. The research manager recorded the amount of time, in minutes, each oven takes to preheat to 350°F. Based on the first sample, the research manager estimated that this type of oven takes an average of 14.2 minutes to preheat to 350°F, with an associated margin of error of 1 minute. Based on the second sample, the research manager estimated that this type of oven takes an average of 14.4 minutes to preheat to 350°F, with an associated margin of error of 2.2 minutes. Assuming the margins of error were calculated the same way, which of the following best explains why the first sample obtained a smaller margin of error than the second sample?`,
+  /* Q5 ← gốc 86 (hình vẽ lại bằng SVG) [trước: Q6] */
+  { id: 5, module: 1, domain: "Advanced Math", type: "mcq",
+    questionText: SVG_Q86 + `The graph of a system of a linear equation and a quadratic equation is shown. What is the solution (<i>x</i>, <i>y</i>) to this system?`,
     image: null,
-    options: [`The first sample contained fewer ovens than the second sample.`, `The first sample contained more ovens than the second sample.`, `The first sample took less time on average to preheat to 350°F than the second sample.`, `The first sample took more time on average to preheat to 350°F than the second sample.`],
+    options: [`(6, 7)`, `(7, 6)`, `(−6, 7)`, `(6, −7)`],
+    correctKey: "A" },
+
+  /* Q6 ← gốc 121 [trước: Q12] */
+  { id: 6, module: 1, domain: "Algebra", type: "mcq",
+    questionText: `If 3<i>x</i> − 9 − 4 = 8<i>x</i> − 9 + 4, what is the value of <i>x</i>?`,
+    image: null,
+    options: [`−${F('8','5')}`, `−${F('5','8')}`, F('3','8'), F('8','11')],
+    correctKey: "A" },
+
+  /* Q7 ← gốc 4 (hình vẽ lại bằng SVG) [trước: Q3] */
+  { id: 7, module: 1, domain: "Problem-Solving and Data Analysis", type: "mcq",
+    questionText: SVG_Q4 + `The scatterplot shows the relationship between two variables, <i>x</i> and <i>y</i>. A line of best fit is also shown. Which of the following equations best represents the line of best fit shown?`,
+    image: null,
+    options: [`<i>y</i> = 13.3 + 0.8<i>x</i>`, `<i>y</i> = 13.3 − 0.8<i>x</i>`, `<i>y</i> = −13.3 + 0.8<i>x</i>`, `<i>y</i> = −13.3 − 0.8<i>x</i>`],
     correctKey: "B" },
 
-  /* Q15 ← gốc 194 */
-  { id: 15, module: 1, domain: "Algebra", type: "mcq",
+  /* Q8 ← gốc 194 [trước: Q15] */
+  { id: 8, module: 1, domain: "Algebra", type: "mcq",
     questionText: EQ(`<i>y</i> = 10<i>x</i> + 52`) + `One of the two equations in a system of linear equations is given. The system has infinitely many solutions. Which equation could be the second equation in this system?`,
     image: null,
     options: [`<i>y</i> − 10<i>x</i> = −52`, `<i>y</i> − 10<i>x</i> = 52`, `<i>y</i> − 13<i>x</i> = 26`, `<i>y</i> − 13<i>x</i> = 0`],
     correctKey: "B" },
 
-  /* Q16 ← gốc 89 */
-  { id: 16, module: 1, domain: "Advanced Math", type: "mcq",
+  /* Q9 ← gốc 63 [trước: Q2] */
+  { id: 9, module: 1, domain: "Algebra", type: "mcq",
+    questionText: `For the linear function <i>f</i>, <i>f</i>(4) = 17 and <i>f</i>(8) = 1. Which equation defines <i>f</i>?`,
+    image: null,
+    options: [`<i>f</i>(<i>x</i>) = −${F('1','4')}<i>x</i> + 18`, `<i>f</i>(<i>x</i>) = ${F('1','4')}<i>x</i> − 1`, `<i>f</i>(<i>x</i>) = −4<i>x</i> + 21`, `<i>f</i>(<i>x</i>) = −4<i>x</i> + 33`],
+    correctKey: "D" },
+
+  /* Q10 ← gốc 174 [trước: Q7] */
+  { id: 10, module: 1, domain: "Problem-Solving and Data Analysis", type: "mcq",
+    questionText: `The ratio <i>x</i> to <i>y</i> is equivalent to the ratio 5 to 6. If <i>x</i> = 7<i>t</i>, what is the value of <i>y</i> in terms of <i>t</i>?`,
+    image: null,
+    options: [`${F('5','42')}<i>t</i>`, `${F('6','35')}<i>t</i>`, `${F('35','6')}<i>t</i>`, `${F('42','5')}<i>t</i>`],
+    correctKey: "D" },
+
+  /* Q11 ← gốc 89 [trước: Q16] */
+  { id: 11, module: 1, domain: "Advanced Math", type: "mcq",
     questionText: EQ(`<i>y</i> = 5<i>x</i><sup>2</sup> − 40<i>x</i> + 35`) + `The given equation represents a parabola in the <i>xy</i>-plane. Which of the following equations that represent the same parabola displays the <i>x</i>-intercepts as constants or coefficients?`,
     image: null,
     options: [`<i>y</i> = 5<i>x</i><sup>2</sup> − 8<i>x</i> + 35`, `<i>y</i> = 5<i>x</i>(<i>x</i> − 8) + 35`, `<i>y</i> = 5(<i>x</i> − 4)<sup>2</sup> − 45`, `<i>y</i> = 5(<i>x</i> − 1)(<i>x</i> − 7)`],
     correctKey: "D" },
 
-  /* Q17 ← gốc 12 */
-  { id: 17, module: 1, domain: "Algebra", type: "gridin",
-    questionText: EQ(`5<i>x</i> = 35`) + `What is the positive solution to the given equation?`,
-    image: null, correctKey: "7" },
-
-  /* Q18 ← gốc 154 */
-  { id: 18, module: 1, domain: "Advanced Math", type: "mcq",
-    questionText: EQ(`<i>f</i>(<i>x</i>) = 23(1.20)${FE('<i>x</i>','4')}`) + `For the given function <i>f</i>, the value of <i>f</i>(<i>x</i>) increases by <i>p</i>% for every increase of <i>x</i> by 8. What is the value of <i>p</i>?`,
-    image: null,
-    options: [`20`, `31`, `40`, `44`],
-    correctKey: "D" },
-
-  /* Q19 ← gốc 53 (hình vẽ lại bằng SVG) */
-  { id: 19, module: 1, domain: "Geometry and Trigonometry", type: "mcq",
+  /* Q12 ← gốc 53 (hình vẽ lại bằng SVG) [trước: Q19] */
+  { id: 12, module: 1, domain: "Geometry and Trigonometry", type: "mcq",
     questionText: SVG_Q53 + `In the figure, line <i>m</i> is parallel to line <i>n</i>, and lines <i>AE</i> and <i>CD</i> intersect at point <i>B</i>. Which additional piece of information is sufficient to prove that triangle <i>ABC</i> is congruent to triangle <i>EBD</i>?`,
     image: null,
     options: [`<i>AB</i> = 15 and <i>DB</i> = 15.`, `<i>AB</i> = 15 and <i>EB</i> = 15.`, `Triangles <i>ABC</i> and <i>EBD</i> are isosceles.`, `No additional information is necessary to determine that the two triangles are congruent.`],
     correctKey: "B" },
 
-  /* Q20 ← gốc 145 */
-  { id: 20, module: 1, domain: "Problem-Solving and Data Analysis", type: "gridin",
-    questionText: `A certain striped marlin can swim at a maximum speed of 22 meters per second. At this maximum speed, how many meters would this striped marlin swim in 3 seconds?`,
-    image: null, correctKey: "66" },
-
-  /* Q21 ← gốc 140 (hình vẽ lại bằng SVG) */
-  { id: 21, module: 1, domain: "Geometry and Trigonometry", type: "mcq",
-    questionText: SVG_Q53 + `In the figure, line <i>m</i> is parallel to line <i>n</i>, and lines <i>AE</i> and <i>CD</i> intersect at point <i>B</i>. Which additional piece of information is sufficient to prove that triangle <i>ABC</i> is congruent to triangle <i>EBD</i>?`,
+  /* Q13 ← gốc 15 [trước: Q14] */
+  { id: 13, module: 1, domain: "Problem-Solving and Data Analysis", type: "mcq",
+    questionText: `A research manager selected 2 random samples of ovens of a certain type to estimate the average amount of time this type of oven takes to preheat to 350 degrees Fahrenheit °F. The research manager recorded the amount of time, in minutes, each oven takes to preheat to 350°F. Based on the first sample, the research manager estimated that this type of oven takes an average of 14.2 minutes to preheat to 350°F, with an associated margin of error of 1 minute. Based on the second sample, the research manager estimated that this type of oven takes an average of 14.4 minutes to preheat to 350°F, with an associated margin of error of 2.2 minutes. Assuming the margins of error were calculated the same way, which of the following best explains why the first sample obtained a smaller margin of error than the second sample?`,
     image: null,
-    options: [`<i>AB</i> = 31 and <i>DB</i> = 31.`, `<i>AB</i> = 31 and <i>EB</i> = 31.`, `Triangles <i>ABC</i> and <i>EBD</i> are isosceles.`, `No additional information is necessary to determine that the two triangles are congruent.`],
+    options: [`The first sample contained fewer ovens than the second sample.`, `The first sample contained more ovens than the second sample.`, `The first sample took less time on average to preheat to 350°F than the second sample.`, `The first sample took more time on average to preheat to 350°F than the second sample.`],
     correctKey: "B" },
 
-  /* Q22 ← gốc 183 */
-  { id: 22, module: 1, domain: "Advanced Math", type: "mcq",
+  /* Q14 ← gốc 183 [trước: Q22] */
+  { id: 14, module: 1, domain: "Advanced Math", type: "mcq",
     questionText: EQ(`<i>P</i>(<i>t</i>) = 67(${F('5','4')})<sup><i>t</i></sup>`) + `A reindeer population was introduced into an area and researched for 19 years. Function <i>P</i> models this reindeer population <i>t</i> years after the population was introduced into the area. Which statement is the best interpretation of ${F('5','4')} in this context?`,
     image: null,
     options: [`For every 4 reindeer there were in this population in a certain year, it is predicted that there were 5 reindeer the next year.`, `For every 5 reindeer there were in this population in a certain year, it is predicted that there were 4 reindeer the next year.`, `It is predicted that this reindeer population grew by 4 reindeer every 5 years.`, `It is predicted that this reindeer population grew by 5 reindeer every 4 years.`],
     correctKey: "A" },
 
-  /* ===================== MODULE 2 ===================== */
-  /* Q23 ← gốc 38 */
-  { id: 23, module: 2, domain: "Algebra", type: "mcq",
-    questionText: `For the linear function <i>f</i>, the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane has a slope of −4 and passes through the point (3, −5). Which equation defines <i>f</i>?`,
+  /* Q15 ← gốc 191 [trước: Q5] */
+  { id: 15, module: 1, domain: "Advanced Math", type: "mcq",
+    questionText: `The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> − 2)(<i>x</i> − 8)(<i>x</i> + 3). In the <i>xy</i>-plane, the graph of <i>y</i> = <i>h</i>(<i>x</i>) is the result of translating the graph of <i>y</i> = <i>f</i>(<i>x</i>) up 6 units. What is the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>h</i>(<i>x</i>)?`,
     image: null,
-    options: [`<i>f</i>(<i>x</i>) = 3<i>x</i> − 5`, `<i>f</i>(<i>x</i>) = −4<i>x</i> − 5`, `<i>f</i>(<i>x</i>) = −4<i>x</i> − 4`, `<i>f</i>(<i>x</i>) = −4<i>x</i> + 7`],
+    options: [`54`, `48`, `6`, `0`],
+    correctKey: "A" },
+
+  /* Q16 ← gốc 154 [trước: Q18] */
+  { id: 16, module: 1, domain: "Advanced Math", type: "mcq",
+    questionText: EQ(`<i>f</i>(<i>x</i>) = 23(1.20)${FE('<i>x</i>','4')}`) + `For the given function <i>f</i>, the value of <i>f</i>(<i>x</i>) increases by <i>p</i>% for every increase of <i>x</i> by 8. What is the value of <i>p</i>?`,
+    image: null,
+    options: [`20`, `31`, `40`, `44`],
     correctKey: "D" },
 
-  /* Q24 ← gốc 19 */
-  { id: 24, module: 2, domain: "Advanced Math", type: "gridin",
-    questionText: EQ(`${F('5','9')}(5<i>x</i> + 9)(<i>x</i> + ${SQ('5<i>k</i> + 9')})(<i>x</i> − ${SQ('5<i>k</i> + 9')}) = 0`) + `In the given equation, <i>k</i> is a positive constant. The product of the solutions to the equation is 81. What is the value of <i>k</i>?`,
-    image: null, correctKey: ["36/5", "7.2"] },
+  /* Q17 ← gốc 140 (hình vẽ lại bằng SVG) [trước: Q21] */
+  { id: 17, module: 1, domain: "Geometry and Trigonometry", type: "mcq",
+    questionText: SVG_Q53 + `In the figure, line <i>m</i> is parallel to line <i>n</i>, and lines <i>AE</i> and <i>CD</i> intersect at point <i>B</i>. Which additional piece of information is sufficient to prove that triangle <i>ABC</i> is congruent to triangle <i>EBD</i>?`,
+    image: null,
+    options: [`<i>AB</i> = 31 and <i>DB</i> = 31.`, `<i>AB</i> = 31 and <i>EB</i> = 31.`, `Triangles <i>ABC</i> and <i>EBD</i> are isosceles.`, `No additional information is necessary to determine that the two triangles are congruent.`],
+    correctKey: "B" },
 
-  /* Q25 ← gốc 149 */
-  { id: 25, module: 2, domain: "Algebra", type: "gridin",
-    questionText: `A line in the <i>xy</i>-plane passes through the points (9, 1), (0, 8), and (<i>c</i>, 0). What is the value of <i>c</i>?`,
-    image: null, correctKey: ["72/7", "10.29", "10.28"] },
+  /* Q18 ← gốc 68 [trước: Q8] */
+  { id: 18, module: 1, domain: "Advanced Math", type: "mcq",
+    questionText: EQ(`4<i>x</i><sup>2</sup> − <i>px</i> + <i>w</i> = −83`) + `In the given equation, <i>p</i> and <i>w</i> are integer constants. The equation has exactly one real solution. Which is <b>NOT</b> a possible value of <i>w</i>?`,
+    image: null,
+    options: [`−19`, `17`, `36`, `317`],
+    correctKey: "C" },
 
-  /* Q26 ← gốc 45 */
-  { id: 26, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
+  /* Q19 ← gốc 96 [trước: Q10] */
+  { id: 19, module: 1, domain: "Advanced Math", type: "mcq",
+    questionText: `The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i><sup><i>x</i></sup> − <i>b</i>, where <i>a</i> and <i>b</i> are constants. In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) passes through the points (<i>c</i>, 11) and (2<i>c</i>, 221), where <i>c</i> is a constant. Which of the following could be the value of <i>b</i>?`,
+    image: null,
+    options: [`4`, `25`, `210`, `232`],
+    correctKey: "A" },
+
+  /* Q20 ← gốc 12 [trước: Q17] */
+  { id: 20, module: 1, domain: "Algebra", type: "gridin",
+    questionText: EQ(`5<i>x</i> = 35`) + `What is the positive solution to the given equation?`,
+    image: null, correctKey: "7" },
+
+  /* Q21 ← gốc 145 [trước: Q20] */
+  { id: 21, module: 1, domain: "Problem-Solving and Data Analysis", type: "gridin",
+    questionText: `A certain striped marlin can swim at a maximum speed of 22 meters per second. At this maximum speed, how many meters would this striped marlin swim in 3 seconds?`,
+    image: null, correctKey: "66" },
+
+  /* Q22 ← gốc 31 [trước: Q4] */
+  { id: 22, module: 1, domain: "Algebra", type: "gridin",
+    questionText: `In the <i>xy</i>-plane, line <i>k</i> has a slope of ${F('6','13')}, an <i>x</i>-intercept of (−6, 0), and a <i>y</i>-intercept of (0, <i>p</i>). What is the value of <i>p</i>?`,
+    image: null, correctKey: ["36/13", "2.769"] },
+
+  /* ===================== MODULE 2 ===================== */
+  /* Q23 ← gốc 45 [trước: Q26] */
+  { id: 23, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
     questionText: `A rectangle has a length of 100 centimeters and a width of 400 centimeters. What is the area, in square centimeters, of the rectangle?`,
     image: null,
     options: [`100`, `500`, `40,000`, `40,400`],
     correctKey: "C" },
 
-  /* Q27 ← gốc 184 */
-  { id: 27, module: 2, domain: "Advanced Math", type: "mcq",
-    questionText: EQ(`4<i>x</i><sup>2</sup> − <i>px</i> + <i>w</i> = −86`) + `In the given equation, <i>p</i> and <i>w</i> are integer constants. The equation has exactly one real solution. Which is <b>NOT</b> a possible value of <i>w</i>?`,
-    image: null,
-    options: [`−22`, `14`, `25`, `314`],
-    correctKey: "C" },
-
-  /* Q28 ← gốc 197 */
-  { id: 28, module: 2, domain: "Algebra", type: "gridin",
-    questionText: `If <i>x</i> + 4<i>y</i> = 34 and 9<i>x</i> − 20<i>y</i> = −86, what is the value of <i>y</i>?`,
-    image: null, correctKey: "7" },
-
-  /* Q29 ← gốc 148 */
-  { id: 29, module: 2, domain: "Advanced Math", type: "mcq",
-    questionText: `What is the <i>x</i>-intercept of the graph of <i>y</i> = ${F('45 − <i>x</i>','<i>ax</i> + <i>b</i>')} in the <i>xy</i>-plane, where <i>a</i> and <i>b</i> are positive constants?`,
-    image: null,
-    options: [`(−${F('<i>b</i>','<i>a</i>')}, 0)`, `(0, ${F('45','<i>b</i>')})`, `(0, −45)`, `(45, 0)`],
-    correctKey: "D" },
-
-  /* Q30 ← gốc 141 */
-  { id: 30, module: 2, domain: "Advanced Math", type: "mcq",
+  /* Q24 ← gốc 141 [trước: Q30] */
+  { id: 24, module: 2, domain: "Advanced Math", type: "mcq",
     questionText: `The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = 6 · 4<sup><i>x</i></sup>. What is the value of <i>f</i>(<i>x</i>) when <i>x</i> = 3?`,
     image: null,
     options: [`64`, `81`, `258`, `384`],
     correctKey: "D" },
 
-  /* Q31 ← gốc 171 */
-  { id: 31, module: 2, domain: "Problem-Solving and Data Analysis", type: "gridin",
-    questionText: `The price of an item increased by <i>p</i>% from $150 to $186. What is the value of <i>p</i>?`,
-    image: null, correctKey: "24" },
+  /* Q25 ← gốc 124 [trước: Q39] */
+  { id: 25, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
+    questionText: `In triangle <i>RST</i>, the length of <i>RS</i> is 21, and the length of <i>ST</i> is 9. Triangle <i>RST</i> is dilated by a scale factor of ${F('1','3')} to obtain triangle <i>R</i>′<i>S</i>′<i>T</i>′. What is the length of <i>S</i>′<i>T</i>′?`,
+    image: null,
+    options: [`3`, `7`, `27`, `63`],
+    correctKey: "A" },
 
-  /* Q32 ← gốc 198 */
+  /* Q26 ← gốc 5 [trước: Q44] */
+  { id: 26, module: 2, domain: "Advanced Math", type: "mcq",
+    questionText: `Which expression is equivalent to 4<i>x</i><sup>3</sup> + 20<i>x</i><sup>2</sup>?`,
+    image: null,
+    options: [`<i>x</i><sup>2</sup> + 20<i>x</i>`, `4<i>x</i><sup>2</sup>(<i>x</i> + 5)`, `4<i>x</i><sup>2</sup>(<i>x</i> + 16)`, `<i>x</i><sup>3</sup> + 20<i>x</i>`],
+    correctKey: "B" },
+
+  /* Q27 ← gốc 139 (hình vẽ lại bằng SVG) [trước: Q43] */
+  { id: 27, module: 2, domain: "Advanced Math", type: "mcq",
+    questionText: SVG_Q139 + `The graph of a system of a linear equation and a quadratic equation is shown. What is the solution (<i>x</i>, <i>y</i>) to this system?`,
+    image: null,
+    options: [`(0, 2)`, `(0, 3)`, `(−3, 2)`, `(3, −2)`],
+    correctKey: "C" },
+
+  /* Q28 ← gốc 147 [trước: Q37] */
+  { id: 28, module: 2, domain: "Algebra", type: "mcq",
+    questionText: `On January 1, 2000, the population of a town was 26,253 and on January 1, 2010, the population was 26,854. The equation 10<i>x</i> + 26,253 = 26,854 describes this situation. Which of the following is the best interpretation of <i>x</i> in this context?`,
+    image: null,
+    options: [`The total increase in population between 2000 and 2010`, `The projected population of the town 10 years after 2010`, `The average increase per year of the population between 2000 and 2010`, `The percentage by which the population of the town increased each year between 2000 and 2010`],
+    correctKey: "C" },
+
+  /* Q29 ← gốc 38 [trước: Q23] */
+  { id: 29, module: 2, domain: "Algebra", type: "mcq",
+    questionText: `For the linear function <i>f</i>, the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane has a slope of −4 and passes through the point (3, −5). Which equation defines <i>f</i>?`,
+    image: null,
+    options: [`<i>f</i>(<i>x</i>) = 3<i>x</i> − 5`, `<i>f</i>(<i>x</i>) = −4<i>x</i> − 5`, `<i>f</i>(<i>x</i>) = −4<i>x</i> − 4`, `<i>f</i>(<i>x</i>) = −4<i>x</i> + 7`],
+    correctKey: "D" },
+
+  /* Q30 ← gốc 72 (hình vẽ lại bằng SVG) [trước: Q40] */
+  { id: 30, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
+    questionText: SVG_Q72 + `In right triangle <i>FGH</i> shown, what is the value of cos <i>F</i>?`,
+    image: null,
+    options: [F(SQ('3'),'68'), F('1','2'), F(SQ('3'),'2'), `34${SQ('3')}`],
+    correctKey: "C" },
+
+  /* Q31 ← gốc 148 [trước: Q29] */
+  { id: 31, module: 2, domain: "Advanced Math", type: "mcq",
+    questionText: `What is the <i>x</i>-intercept of the graph of <i>y</i> = ${F('45 − <i>x</i>','<i>ax</i> + <i>b</i>')} in the <i>xy</i>-plane, where <i>a</i> and <i>b</i> are positive constants?`,
+    image: null,
+    options: [`(−${F('<i>b</i>','<i>a</i>')}, 0)`, `(0, ${F('45','<i>b</i>')})`, `(0, −45)`, `(45, 0)`],
+    correctKey: "D" },
+
+  /* Q32 ← gốc 198 [trước: Q32] */
   { id: 32, module: 2, domain: "Algebra", type: "mcq",
     questionText: `At the beginning of the year, Imani has $170 in her account. Each month this year, she will deposit between $30 and $60 into the account. Which inequality represents all possibilities for the total amount of money <i>x</i>, in dollars, in Imani's account after 10 months of deposits this year?`,
     image: null,
     options: [`<i>x</i> ≤ 300`, `<i>x</i> ≥ 600`, `170 ≤ <i>x</i> ≤ 620`, `470 ≤ <i>x</i> ≤ 770`],
     correctKey: "D" },
 
-  /* Q33 ← gốc 166 */
-  { id: 33, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
-    questionText: `In triangle <i>JKL</i>, the measure of angle <i>J</i> is 90<i>b</i>°, the measure of angle <i>K</i> is 66<i>a</i>°, and the measure of angle <i>L</i> is 24<i>a</i>°, where <i>a</i> and <i>b</i> are constants. Which of the following must be true?`,
-    image: null,
-    options: [`cos <i>L</i> &gt; sin <i>K</i>`, `cos <i>L</i> = sin <i>K</i>`, `cos <i>L</i> &lt; sin <i>K</i>`, `There is not enough information to compare the values of cos <i>L</i> and sin <i>K</i>.`],
-    correctKey: "D" },
-
-  /* Q34 ← gốc 75 */
-  { id: 34, module: 2, domain: "Advanced Math", type: "gridin",
-    questionText: `The expression 6<i>x</i><sup>4</sup> + 17<i>x</i><sup>2</sup> + 5 can be rewritten as (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>), where <i>a</i> and <i>b</i> are positive integers, or as (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>), where <i>c</i> and <i>d</i> are positive nonintegers. What is the value of <i>a</i> + <i>c</i>?`,
-    image: null, correctKey: ["17/2", "8.5"] },
-
-  /* Q35 ← gốc 70 */
-  { id: 35, module: 2, domain: "Algebra", type: "gridin",
-    questionText: `Line <i>k</i> contains the points (−3, −60), (<i>v</i>, 0), and (5, 76). What is the value of <i>v</i>?`,
-    image: null, correctKey: ["9/17", "0.529"] },
-
-  /* Q36 ← gốc 90 */
-  { id: 36, module: 2, domain: "Advanced Math", type: "mcq",
-    questionText: `A certain investment account offers a special interest rate for the first 4 months the account is open followed by a lower interest rate for the remainder of the time the account is open. Bennett opened one of these accounts with an original account balance of $700 and did not make any other deposits or withdrawals. 4 months after Bennett opened the account, the balance had increased by 0.6% of the original balance. 6 months after Bennett opened the account, the balance had increased by an additional 0.2% of the balance at the end of the first 4 months. Every 2 months after the first 6 months, the balance had increased by an additional 0.2% of the balance 2 months before. Which of the following equations could represent the account balance <i>B</i>(<i>x</i>), in dollars, <i>x</i> months after the account was opened, where <i>x</i> ≥ 4?`,
-    image: null,
-    options: [`<i>B</i>(<i>x</i>) = 704.2(1.002)${FE('<i>x</i> − 4','2')}`, `<i>B</i>(<i>x</i>) = 704.2(1.002)${FE('<i>x</i>','2')}<span style="font-size:.72em;vertical-align:.75em;"> − 4</span>`, `<i>B</i>(<i>x</i>) = 704.2(1.002)<sup>2<i>x</i> − 8</sup>`, `<i>B</i>(<i>x</i>) = 704.2(1.002)<sup>2<i>x</i> − 4</sup>`],
-    correctKey: "A" },
-
-  /* Q37 ← gốc 147 */
-  { id: 37, module: 2, domain: "Algebra", type: "mcq",
-    questionText: `On January 1, 2000, the population of a town was 26,253 and on January 1, 2010, the population was 26,854. The equation 10<i>x</i> + 26,253 = 26,854 describes this situation. Which of the following is the best interpretation of <i>x</i> in this context?`,
-    image: null,
-    options: [`The total increase in population between 2000 and 2010`, `The projected population of the town 10 years after 2010`, `The average increase per year of the population between 2000 and 2010`, `The percentage by which the population of the town increased each year between 2000 and 2010`],
-    correctKey: "C" },
-
-  /* Q38 ← gốc 111 */
-  { id: 38, module: 2, domain: "Problem-Solving and Data Analysis", type: "mcq",
+  /* Q33 ← gốc 111 [trước: Q38] */
+  { id: 33, module: 2, domain: "Problem-Solving and Data Analysis", type: "mcq",
     questionText: `The value of a painting increased by 166% from the end of 2011 to the end of 2012 and then decreased by 14% from the end of 2012 to the end of 2013. What was the net percentage increase in the value of the painting from the end of 2011 to the end of 2013?`,
     image: null,
     options: [`128.76%`, `142.76%`, `152.00%`, `203.24%`],
     correctKey: "A" },
 
-  /* Q39 ← gốc 124 */
-  { id: 39, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
-    questionText: `In triangle <i>RST</i>, the length of <i>RS</i> is 21, and the length of <i>ST</i> is 9. Triangle <i>RST</i> is dilated by a scale factor of ${F('1','3')} to obtain triangle <i>R</i>′<i>S</i>′<i>T</i>′. What is the length of <i>S</i>′<i>T</i>′?`,
-    image: null,
-    options: [`3`, `7`, `27`, `63`],
-    correctKey: "A" },
-
-  /* Q40 ← gốc 72 (hình vẽ lại bằng SVG) */
-  { id: 40, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
-    questionText: SVG_Q72 + `In right triangle <i>FGH</i> shown, what is the value of cos <i>F</i>?`,
-    image: null,
-    options: [F(SQ('3'),'68'), F('1','2'), F(SQ('3'),'2'), `34${SQ('3')}`],
-    correctKey: "C" },
-
-  /* Q41 ← gốc 196 (hình vẽ lại bằng SVG) */
-  { id: 41, module: 2, domain: "Algebra", type: "mcq",
+  /* Q34 ← gốc 196 (hình vẽ lại bằng SVG) [trước: Q41] */
+  { id: 34, module: 2, domain: "Algebra", type: "mcq",
     questionText: SVG_Q196 + `Line <i>k</i> is shown in the <i>xy</i>-plane. Line <i>j</i> (not shown) is perpendicular to line <i>k</i> and passes through the point (16, 22). What is the <i>y</i>-coordinate of the <i>y</i>-intercept of line <i>j</i>?`,
     image: null,
     options: [`−${F('23','2')}`, `−${F('1','2')}`, F('4','5'), F('46','5')],
     correctKey: "D" },
 
-  /* Q42 ← gốc 42 */
-  { id: 42, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
+  /* Q35 ← gốc 184 [trước: Q27] */
+  { id: 35, module: 2, domain: "Advanced Math", type: "mcq",
+    questionText: EQ(`4<i>x</i><sup>2</sup> − <i>px</i> + <i>w</i> = −86`) + `In the given equation, <i>p</i> and <i>w</i> are integer constants. The equation has exactly one real solution. Which is <b>NOT</b> a possible value of <i>w</i>?`,
+    image: null,
+    options: [`−22`, `14`, `25`, `314`],
+    correctKey: "C" },
+
+  /* Q36 ← gốc 42 [trước: Q42] */
+  { id: 36, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
     questionText: `A circle in the <i>xy</i>-plane has its center at (−5, 5). Line <i>t</i> is tangent to this circle at the point (6, −1). Which of the following points also lies on line <i>t</i>?`,
     image: null,
     options: [`(0, ${F('11','6')})`, `(1, 16)`, `(12, 10)`, `(17, 5)`],
     correctKey: "C" },
 
-  /* Q43 ← gốc 139 (hình vẽ lại bằng SVG) */
-  { id: 43, module: 2, domain: "Advanced Math", type: "mcq",
-    questionText: SVG_Q139 + `The graph of a system of a linear equation and a quadratic equation is shown. What is the solution (<i>x</i>, <i>y</i>) to this system?`,
+  /* Q37 ← gốc 90 [trước: Q36] */
+  { id: 37, module: 2, domain: "Advanced Math", type: "mcq",
+    questionText: `A certain investment account offers a special interest rate for the first 4 months the account is open followed by a lower interest rate for the remainder of the time the account is open. Bennett opened one of these accounts with an original account balance of $700 and did not make any other deposits or withdrawals. 4 months after Bennett opened the account, the balance had increased by 0.6% of the original balance. 6 months after Bennett opened the account, the balance had increased by an additional 0.2% of the balance at the end of the first 4 months. Every 2 months after the first 6 months, the balance had increased by an additional 0.2% of the balance 2 months before. Which of the following equations could represent the account balance <i>B</i>(<i>x</i>), in dollars, <i>x</i> months after the account was opened, where <i>x</i> ≥ 4?`,
     image: null,
-    options: [`(0, 2)`, `(0, 3)`, `(−3, 2)`, `(3, −2)`],
-    correctKey: "C" },
+    options: [`<i>B</i>(<i>x</i>) = 704.2(1.002)${FE('<i>x</i> − 4','2')}`, `<i>B</i>(<i>x</i>) = 704.2(1.002)${FE('<i>x</i>','2')}<span style="font-size:.72em;vertical-align:.75em;"> − 4</span>`, `<i>B</i>(<i>x</i>) = 704.2(1.002)<sup>2<i>x</i> − 8</sup>`, `<i>B</i>(<i>x</i>) = 704.2(1.002)<sup>2<i>x</i> − 4</sup>`],
+    correctKey: "A" },
 
-  /* Q44 ← gốc 5 */
-  { id: 44, module: 2, domain: "Advanced Math", type: "mcq",
-    questionText: `Which expression is equivalent to 4<i>x</i><sup>3</sup> + 20<i>x</i><sup>2</sup>?`,
+  /* Q38 ← gốc 166 [trước: Q33] */
+  { id: 38, module: 2, domain: "Geometry and Trigonometry", type: "mcq",
+    questionText: `In triangle <i>JKL</i>, the measure of angle <i>J</i> is 90<i>b</i>°, the measure of angle <i>K</i> is 66<i>a</i>°, and the measure of angle <i>L</i> is 24<i>a</i>°, where <i>a</i> and <i>b</i> are constants. Which of the following must be true?`,
     image: null,
-    options: [`<i>x</i><sup>2</sup> + 20<i>x</i>`, `4<i>x</i><sup>2</sup>(<i>x</i> + 5)`, `4<i>x</i><sup>2</sup>(<i>x</i> + 16)`, `<i>x</i><sup>3</sup> + 20<i>x</i>`],
-    correctKey: "B" }
+    options: [`cos <i>L</i> &gt; sin <i>K</i>`, `cos <i>L</i> = sin <i>K</i>`, `cos <i>L</i> &lt; sin <i>K</i>`, `There is not enough information to compare the values of cos <i>L</i> and sin <i>K</i>.`],
+    correctKey: "D" },
+
+  /* Q39 ← gốc 171 [trước: Q31] */
+  { id: 39, module: 2, domain: "Problem-Solving and Data Analysis", type: "gridin",
+    questionText: `The price of an item increased by <i>p</i>% from $150 to $186. What is the value of <i>p</i>?`,
+    image: null, correctKey: "24" },
+
+  /* Q40 ← gốc 197 [trước: Q28] */
+  { id: 40, module: 2, domain: "Algebra", type: "gridin",
+    questionText: `If <i>x</i> + 4<i>y</i> = 34 and 9<i>x</i> − 20<i>y</i> = −86, what is the value of <i>y</i>?`,
+    image: null, correctKey: "7" },
+
+  /* Q41 ← gốc 149 [trước: Q25] */
+  { id: 41, module: 2, domain: "Algebra", type: "gridin",
+    questionText: `A line in the <i>xy</i>-plane passes through the points (9, 1), (0, 8), and (<i>c</i>, 0). What is the value of <i>c</i>?`,
+    image: null, correctKey: ["72/7", "10.29", "10.28"] },
+
+  /* Q42 ← gốc 70 [trước: Q35] */
+  { id: 42, module: 2, domain: "Algebra", type: "gridin",
+    questionText: `Line <i>k</i> contains the points (−3, −60), (<i>v</i>, 0), and (5, 76). What is the value of <i>v</i>?`,
+    image: null, correctKey: ["9/17", "0.529"] },
+
+  /* Q43 ← gốc 19 [trước: Q24] */
+  { id: 43, module: 2, domain: "Advanced Math", type: "gridin",
+    questionText: EQ(`${F('5','9')}(5<i>x</i> + 9)(<i>x</i> + ${SQ('5<i>k</i> + 9')})(<i>x</i> − ${SQ('5<i>k</i> + 9')}) = 0`) + `In the given equation, <i>k</i> is a positive constant. The product of the solutions to the equation is 81. What is the value of <i>k</i>?`,
+    image: null, correctKey: ["36/5", "7.2"] },
+
+  /* Q44 ← gốc 75 [trước: Q34] */
+  { id: 44, module: 2, domain: "Advanced Math", type: "gridin",
+    questionText: `The expression 6<i>x</i><sup>4</sup> + 17<i>x</i><sup>2</sup> + 5 can be rewritten as (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>), where <i>a</i> and <i>b</i> are positive integers, or as (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>), where <i>c</i> and <i>d</i> are positive nonintegers. What is the value of <i>a</i> + <i>c</i>?`,
+    image: null, correctKey: ["17/2", "8.5"] }
 ];
 
 
